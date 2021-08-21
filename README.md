@@ -24,8 +24,9 @@ import 'gun/lib/promise';
 import 'gun/lib/radix';
 import 'gun/lib/radisk';
 import 'gun/lib/store';
-import './expo-sqlite-adapter';
+import { makeStoreAdapter } from '@altrx/gundb-expo-sqlite-adapter';
 
+makeStoreAdapter(Gun);
 const gun = new Gun({
   localStorage: false,
   radisk: true,
