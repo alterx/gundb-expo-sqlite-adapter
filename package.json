@@ -1,0 +1,76 @@
+{
+  "name": "@altrx/gundb-expo-sqlite-adapter",
+  "version": "0.1.0",
+  "description": "GunDB Expo SQLite Adapter",
+  "browser": "./dist/gundb-expo-sqlite-adapter.umd.js",
+  "umd:main": "./dist/gundb-expo-sqlite-adapter.umd.js",
+  "jsnext:main": "./dist/gundb-expo-sqlite-adapter.modern.js",
+  "main": "./dist/gundb-expo-sqlite-adapter.js",
+  "module": "./dist/gundb-expo-sqlite-adapter.module.js",
+  "unpkg": "./dist/gundb-expo-sqlite-adapter.umd.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "typings": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "browser": "./dist/gundb-expo-sqlite-adapter.modern.js",
+      "umd": "./dist/gundb-expo-sqlite-adapter.umd.js",
+      "import": "./dist/gundb-expo-sqlite-adapter.module.js",
+      "require": "./dist/gundb-expo-sqlite-adapter.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alterx/gundb-expo-sqlite-adapter.git"
+  },
+  "keywords": [
+    "preact",
+    "react",
+    "gun",
+    "gunDB",
+    "graph",
+    "document",
+    "key",
+    "value",
+    "relational",
+    "datastore",
+    "database",
+    "engine",
+    "realtime",
+    "decentralized",
+    "peer-to-peer",
+    "distributed",
+    "P2P",
+    "OSS",
+    "embedded",
+    "localstorage",
+    "S3"
+  ],
+  "files": [
+    "dist",
+    "preact/dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && microbundle --define process.env.NODE_ENV=production --name @altrx/gundb-expo-sqlite-adapter --no-compress --output dist/",
+    "dev": "microbundle watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Vega",
+  "license": "MIT",
+  "peerDependencies": {},
+  "devDependencies": {
+    "@skypack/package-check": "^0.2.2",
+    "husky": "^4.2.5",
+    "microbundle": "^0.12.4",
+    "prettier": "^2.0.5",
+    "pretty-quick": "^2.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rimraf": "^3.0.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  }
+}
