@@ -1,6 +1,6 @@
 {
   "name": "@altrx/gundb-expo-sqlite-adapter",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "GunDB Expo SQLite Adapter",
   "browser": "./dist/gundb-expo-sqlite-adapter.umd.js",
   "umd:main": "./dist/gundb-expo-sqlite-adapter.umd.js",
