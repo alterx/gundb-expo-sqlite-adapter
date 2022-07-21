@@ -18,7 +18,11 @@ import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
 import Constants from 'expo-constants';
 import * as SQLite from 'expo-sqlite';
 
-import Gun from 'gun';
+import WebviewCrypto from 'react-native-webview-crypto';
+import { registerRootComponent } from 'expo';
+
+import 'gun/lib/mobile'; // most important!
+import Gun from 'gun/gun';
 import SEA from 'gun/sea';
 import 'gun/lib/promise';
 import 'gun/lib/radix';
@@ -33,7 +37,9 @@ const gun = new Gun({
   sqlite: {
     SQLite,
     databaseName: 'todo.db',
-    onOpen: () => {},
+    onOpen: () => {
+      console.log('DB OPENED');
+    },
     onError: (err) => {
       console.log('ERROR');
     },
@@ -81,7 +87,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text style={styles.welcome}>Hello {name}</Text>
-
+      <WebviewCrypto />
       <View style={styles.flexRow}>
         <TextInput
           value={name}
@@ -90,7 +96,7 @@ export default function App() {
         />
       </View>
       <Button
-        title="Update"
+        title="Save"
         onPress={() => {
           node.put({ name });
           setName(name);
@@ -124,6 +130,9 @@ const styles = StyleSheet.create({
     padding: 8,
   },
 });
+
+registerRootComponent(App);
+
 ```
 
 ## License
