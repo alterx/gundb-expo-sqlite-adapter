@@ -12,6 +12,8 @@ $ npm i @altrx/gundb-expo-sqlite-adapter
 
 ### Basic Usage:
 
+See full example [here](https://github.com/alterx/gundb-expo-sqlite)
+
 ```jsx harmony
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
